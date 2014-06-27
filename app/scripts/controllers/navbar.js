@@ -8,7 +8,12 @@ angular.module('teamDashboardApp')
     }, {
       'title': 'Settings',
       'link': '/settings'
-    }];
+    },
+        {
+            'title': 'Dashboard',
+            'link': '/dashboard'
+        }
+    ];
     
     $scope.logout = function() {
       Auth.logout()

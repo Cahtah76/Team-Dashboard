@@ -25,6 +25,11 @@ angular.module('teamDashboardApp', [
         controller: 'SettingsCtrl',
         authenticate: true
       })
+        .when('/dashboard', {
+            templateUrl: 'partials/dashboard',
+            controller: 'DashboardCtrl',
+            authenticate: true
+        })
       .otherwise({
         redirectTo: '/'
       });
