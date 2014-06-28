@@ -1,8 +1,11 @@
 <content>
     <div class="teams">
         <div class="teamManager">
-            <div class="teamRepeater" >
-                hello world!
+            <input type="text" ng-model="teamMemberName">
+            <input type="text" ng-model="teamMemberHours">
+            <button ng-click="addTeam(teamMemberName, teamMemberHours)">Add Team</button>
+            <div class="teamRepeater" ng-repeat="team in teams">
+                hello world!  {{team[0].name}}
             </div>
         </div>
 
