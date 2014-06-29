@@ -1,11 +1,24 @@
+<div ng-include="'partials/navbar.html'"></div>
+
 <content>
     <div class="teams">
         <div class="teamManager">
-            <input type="text" ng-model="teamMemberName">
-            <input type="text" ng-model="teamMemberHours">
-            <button ng-click="addTeam(teamMemberName, teamMemberHours)">Add Team</button>
+            <input class="input-sm " type="text" ng-model="teamName">
+            <button class="btn" ng-click="addTeam(teamName)">Add Team</button>
+            <div>
+                <h2 class="h2">Teams:</h2>
+            </div>
+            <hr>
             <div class="teamRepeater" ng-repeat="team in teams">
-                hello world!  {{team[0].name}}
+                <h2 class="h2">{{team.name}}'s team</h2>
+                <input class="input-sm " type="text" ng-model="memberName">
+                <input class="input-sm " type="text" ng-model="memberHours">
+
+                <button class="btn" ng-click="addTeamMem(memberName, memberHours)">Add Team Member</button>
+                <div ng-repeat="teamMember in this.team.teamMem" class="well">
+                    {{teamMember.name}} {{teamMember.hours}} <button class="btn" ng-click="removeTeamMem()">remove</button>
+                </div>
+
             </div>
         </div>
 

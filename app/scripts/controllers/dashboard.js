@@ -3,12 +3,28 @@
 angular.module('teamDashboardApp')
   .controller('DashboardCtrl', function ($scope) {
 
-        $scope.teams = [[{name: 'adam', hours: "3,6"}],[{name: 'andrew', hours: "3,6"}]];
+        $scope.teams = [{name: 'adam', teamMem: [{name: "adam", hours: '7-3'}]}];
 
 
 
-        $scope.addTeam = function(name, hours) {
-            $scope.teams.push([{name: name, hours: hours}])
+        $scope.addTeam = function(team) {
+            $scope.teams.push({name: team, teamMem: []})
+        };
+
+        $scope.addTeamMem = function(name, hours) {
+
+            this.team.teamMem.push({name: name, hours: hours})
+            console.log(this.team.teamMem);
+        };
+        $scope.removeTeamMem = function(name, hours) {
+                console.log(this);
+            var index = this.teamMember.$index;
+            console.log(this.$parent.team.teamMem)
+
+            this.$parent.team.teamMem.splice(index,1);
+            console.log(index)
+
+
         };
 
   });
