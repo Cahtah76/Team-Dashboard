@@ -3,20 +3,23 @@
 <content>
     <div class="teams">
         <div class="teamManager">
-            <input class="input-sm " type="text" ng-model="teamName">
-            <button class="btn" ng-click="addTeam(teamName)">Add Team</button>
-            <div>
-                <h2 class="h2">Teams:</h2>
+            <h2 class="h1 floatLeft ">Teams:</h2>
+            <div class="teamMaker">
+                <input class="input-sm " type="text" ng-model="teamName">
+                <button class="btn" ng-click="addTeam(teamName)">Add Team</button>
             </div>
+
             <hr>
-            <div class="teamRepeater" ng-repeat="team in teams">
+            <div class=" team well" ng-repeat="team in teams">
                 <h2 class="h2">{{team.name}}'s team</h2>
                 <input class="input-sm " type="text" ng-model="memberName">
                 <input class="input-sm " type="text" ng-model="memberHours">
 
                 <button class="btn" ng-click="addTeamMem(memberName, memberHours)">Add Team Member</button>
-                <div ng-repeat="teamMember in this.team.teamMem" class="well">
-                    {{teamMember.name}} {{teamMember.hours}} <button class="btn" ng-click="removeTeamMem()">remove</button>
+                <div ng-repeat="teamMember in this.team.teamMem" class="teamMember">
+                    <p class="memName"><span  ng-model="teamMember.name">{{teamMember.name}}</span> |
+                        <input class="input-sm" ng-model="teamMember.hours" /> </p>
+                    <button class="btn rightFloat bottomMargin" ng-click="removeTeamMem()">remove</button>
                 </div>
 
             </div>

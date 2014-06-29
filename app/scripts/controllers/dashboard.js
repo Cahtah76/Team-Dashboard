@@ -14,17 +14,12 @@ angular.module('teamDashboardApp')
         $scope.addTeamMem = function(name, hours) {
 
             this.team.teamMem.push({name: name, hours: hours})
-            console.log(this.team.teamMem);
+//            console.log(this.team.teamMem);
         };
         $scope.removeTeamMem = function(name, hours) {
-                console.log(this);
-            var index = this.teamMember.$index;
-            console.log(this.$parent.team.teamMem)
-
+            var index = this.$index;
             this.$parent.team.teamMem.splice(index,1);
-            console.log(index)
-
-
+            
         };
 
   });

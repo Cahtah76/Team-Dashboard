@@ -1,4 +1,36 @@
+.team {
+
+}
+.bottomMargin {
+    margin-bottom: 8px;
+}
+.teamMember {
+    max-width: 310px;
+    background-color: white;
+    margin-top: .5em;
+    height: 50px;
+    padding:10px;
+    border: 1px solid lightgrey;
+    border-radius: 3px;
+}
+.memName {
+    max-width: 30px;
+    display:inline;
+    font-size: 1.3em;
+}
+.floatLeft {
+    /*float:left;*/
+    display:inline;
+    margin-right: 1em;
+}
+.teamMaker {
+    display:inline;
+}
+.rightFloat {
+    float:right
+}
 /* Space out content a bit */
+
 body {
   padding-top: 20px;
   padding-bottom: 20px;
