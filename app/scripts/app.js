@@ -26,14 +26,15 @@ angular.module('teamDashboardApp', [
         controller: 'SettingsCtrl',
         authenticate: true
       })
-        .when('/dashboard', {
+       .when('/dashboard', {
             templateUrl: 'partials/dashboard',
             controller: 'DashboardCtrl',
             authenticate: true
-        })
+       })
       .otherwise({
         redirectTo: '/'
       });
+
       
     $locationProvider.html5Mode(true);
       
