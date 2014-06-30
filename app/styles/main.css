@@ -12,6 +12,7 @@
     padding:10px;
     border: 1px solid lightgrey;
     border-radius: 3px;
+
 }
 .memName {
     max-width: 30px;
@@ -27,7 +28,7 @@
     display:inline;
 }
 .rightFloat {
-    float:right
+    display:inline;
 }
 /* Space out content a bit */
 

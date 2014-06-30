@@ -5,15 +5,16 @@
         <div class="teamManager">
             <h2 class="h1 floatLeft ">Teams:</h2>
             <div class="teamMaker">
-                <input class="input-sm " type="text" ng-model="teamName">
+                <input class="input-sm " placeholder="Supervisor" type="text" ng-model="teamName">
                 <button class="btn" ng-click="addTeam(teamName)">Add Team</button>
             </div>
 
             <hr>
             <div class=" team well" ng-repeat="team in teams">
-                <h2 class="h2">{{team.name}}'s team</h2>
-                <input class="input-sm " type="text" ng-model="memberName">
-                <input class="input-sm " type="text" ng-model="memberHours">
+                <b class="h2">{{team.name}}'s team</b>
+                <button class="btn" ng-click="removeTeam()">Del</button>
+                <input class="input-sm " placeholder="Name" type="text" ng-model="memberName">
+                <input class="input-sm " placeholder="hours" type="text" ng-model="memberHours">
 
                 <button class="btn" ng-click="addTeamMem(memberName, memberHours)">Add Team Member</button>
 
