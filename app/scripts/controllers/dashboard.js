@@ -8,7 +8,12 @@ angular.module('teamDashboardApp')
 
             // team methods
         $scope.addTeam = function(team) {
-            $scope.teams.push({name: team, teamMem: []})
+            if (team) {
+                $scope.teams.push({name: team, teamMem: []})
+
+            } else {
+                alert("Please enter a name")
+            }
         };
         $scope.removeTeam = function() {
             var index = this.$index;
@@ -18,8 +23,12 @@ angular.module('teamDashboardApp')
         }
             // Team member methods
         $scope.addTeamMem = function(name, hours) {
+             if (name == undefined) {
+                 alert("please enter a name");
+             } else {
+                 this.team.teamMem.push({name: name, hours: hours})
 
-            this.team.teamMem.push({name: name, hours: hours})
+             }
         };
         $scope.removeTeamMem = function() {
             var index = this.$index;
