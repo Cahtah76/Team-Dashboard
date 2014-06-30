@@ -3,27 +3,33 @@
 <content>
     <div class="teams">
         <div class="teamManager">
-            <h2 class="h1 floatLeft ">Teams:</h2>
-            <div class="teamMaker">
-                <input class="input-sm " placeholder="Supervisor" type="text" ng-model="teamName">
-                <button class="btn" ng-click="addTeam(teamName)">Add Team</button>
-            </div>
+            <h2 class="h1 floatLeft ">Teams:</h2> {{teams.length}}
+            <form class="form-group">
+                <div class="teamMaker">
+                    <input class="input-sm " placeholder="Supervisor" type="text" ng-model="teamName">
+                    <button class="btn" ng-disabled="!teamName" ng-click="addTeam(teamName)">Add Team</button>
+                </div>
+            </form>
+
 
             <hr>
             <div class=" team well" ng-repeat="team in teams">
                 <b class="h2">{{team.name}}'s team</b>
                 <button class="btn" ng-click="removeTeam()">Del</button>
-                <input class="input-sm " placeholder="Name" type="text" ng-model="memberName">
-                <input class="input-sm " placeholder="hours" type="text" ng-model="memberHours">
 
-                <button class="btn" ng-click="addTeamMem(memberName, memberHours)">Add Member</button>
+                <form class="form-group">
+                    <input class="input-sm " placeholder="Name" type="text" ng-model="memberName">
+                    <input class="input-sm " placeholder="hours" type="text" ng-model="memberHours">
+                    <button class="btn" ng-disabled="!memberName" ng-click="addTeamMem(memberName, memberHours)">Add Member</button>
+                </form>
+
 
                 <div ui-on-Drop="onDrop($event,$data,this.team.teamMem)">
                     <div  ui-draggable="true" drag="teamMember"
                           on-drop-success="dropSuccessHandler($event,$index,this.team.teamMem)"
                           ng-repeat="teamMember in this.team.teamMem track by $index" class="teamMember">
 
-                        <p class="memName"><span  ng-model="teamMember.name">{{teamMember.name}}</span> |
+                        <p class="memName"><span  ng-model="teamMember.name">{{teamMember.name}}</span>
                             <input class="input-sm" ng-model="teamMember.hours" /> </p>
                         <button class="btn rightFloat bottomMargin" ng-click="removeTeamMem()">remove</button>
                     </div>
