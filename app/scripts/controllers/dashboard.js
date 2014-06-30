@@ -19,7 +19,7 @@ angular.module('teamDashboardApp')
         $scope.removeTeamMem = function(name, hours) {
             var index = this.$index;
             this.$parent.team.teamMem.splice(index,1);
-            
+
         };
 
   });

@@ -16,7 +16,7 @@
                 <input class="input-sm " type="text" ng-model="memberHours">
 
                 <button class="btn" ng-click="addTeamMem(memberName, memberHours)">Add Team Member</button>
-                <div ng-repeat="teamMember in this.team.teamMem" class="teamMember">
+                <div  ng-repeat="teamMember in this.team.teamMem" class="teamMember">
                     <p class="memName"><span  ng-model="teamMember.name">{{teamMember.name}}</span> |
                         <input class="input-sm" ng-model="teamMember.hours" /> </p>
                     <button class="btn rightFloat bottomMargin" ng-click="removeTeamMem()">remove</button>
